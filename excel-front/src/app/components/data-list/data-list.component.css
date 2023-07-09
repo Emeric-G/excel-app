@@ -1,0 +1,24 @@
+.file-selecteur:hover {
+  cursor: pointer;
+}
+
+.button-div {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 5%;
+}
+
+.left-panel{
+  width: 10%;
+}
+
+.delete-button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.delete-button > mat-icon:hover {
+  cursor: pointer;
+  color: rgb(117, 27, 27);
+}

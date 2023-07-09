@@ -1,0 +1,25 @@
+<mat-card class="login-register-card">
+  <mat-card-content class="login-register-card-title"><h2>Log in</h2></mat-card-content>
+  <mat-error *ngIf="loginError">
+    Email ou mot de passe incorrect
+  </mat-error>
+  <mat-form-field>
+    <mat-label>Email</mat-label>
+    <input type="email" matInput [(ngModel)]="email" [formControl]="emailFormControl" placeholder="Ex. excel@test.com">
+    <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+      Please enter a valid email address
+    </mat-error>
+    <mat-error *ngIf="emailFormControl.hasError('required')">
+      Email is <strong>required</strong>
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Password</mat-label>
+    <input type="password" matInput [(ngModel)]="password" [formControl]="passwordFormControl" placeholder="Ex. excel@test.com">
+    <mat-error *ngIf="passwordFormControl.hasError('required')">
+      Password is <strong>required</strong>
+    </mat-error>
+  </mat-form-field>
+  <button mat-raised-button color="primary" (click)="login()">Login</button>
+</mat-card>
+<mat-spinner *ngIf="isLogin" class="center-spinner"></mat-spinner>

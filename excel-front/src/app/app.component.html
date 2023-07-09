@@ -1,0 +1,10 @@
+<!-- Toolbar -->
+<mat-toolbar color="primary" class="app-header flex-position">
+  <div>Excel-Test</div>
+  <span class="nav-tool-items">
+    <a mat-button *ngIf="userNotLog" routerLink="login" routerLinkActive="active">Log in</a>
+    <a mat-button *ngIf="userLogged" routerLinkActive="active" (click)="logout()">Log out</a>
+    <a mat-button *ngIf="userNotLog" mat-raised-button routerLink="register" routerLinkActive="active">Register</a>
+  </span>
+</mat-toolbar>
+<router-outlet></router-outlet>
