@@ -1,0 +1,33 @@
+<div class="left-panel">
+  <input id="file-input" type="file" class="file-upload" (change)="fileUpload($event)" [hidden]="true">
+  <mat-list>
+    <div mat-subheader>Files</div>
+    <mat-list-item *ngFor="let file of files">
+      <mat-icon matListItemIcon>note</mat-icon>
+      <div matListItemTitle class="delete-button">
+        <a class="file-selecteur" (click)="loadExcelData(file.id)">{{file.name}}</a>
+        <mat-icon (click)="deleteData(file.id)">delete</mat-icon>
+      </div>
+    </mat-list-item>
+  </mat-list>
+  <div class="button-div">
+    <div class="example-button-container">
+      <button type="file" mat-mini-fab color="primary" (click)="clickInputFile()">
+        <mat-icon>upload</mat-icon>
+      </button>
+    </div>
+    <div class="example-button-container">
+      <button mat-mini-fab color="primary" (click)="saveData()">
+        <mat-icon>edit_square</mat-icon>
+      </button>
+    </div>
+  </div>
+</div>
+<ag-grid-angular
+    style="width: 90%; height: 65em;"
+    class="ag-theme-alpine"
+    [columnDefs]="colDef"
+    [rowData]="dataRow"
+></ag-grid-angular>
+
+<mat-spinner *ngIf="isLoading" class="center-spinner"></mat-spinner>
