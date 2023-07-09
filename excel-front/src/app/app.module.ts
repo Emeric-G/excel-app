@@ -13,7 +13,6 @@ import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { AgGridModule } from 'ag-grid-angular';
 import { AuthInterceptor } from './interceptors/auth.interceptor';
-import { ErrorDialogComponent } from './components/error-dialog/error-dialog.component';
 
 @NgModule({
   declarations: [
@@ -21,8 +20,7 @@ import { ErrorDialogComponent } from './components/error-dialog/error-dialog.com
     LoginComponent,
     RegisterComponent,
     UserComponent,
-    DataListComponent,
-    ErrorDialogComponent
+    DataListComponent
   ],
   imports: [
     BrowserModule,
